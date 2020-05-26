@@ -39,7 +39,8 @@ public class gps extends FragmentActivity implements OnMapReadyCallback {
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-
+        mMap.getUiSettings().setZoomControlsEnabled(true);
+        mMap.setMyLocationEnabled(true);
         // Add a marker in Sydney and move the camera
         LatLng prueba = new LatLng(19.278912, -99.628864);
         mMap.addMarker(new MarkerOptions().position(prueba).title("Steren").snippet("Contamos con garantías virtuales").icon(BitmapDescriptorFactory.fromResource(R.drawable.icono1)));
@@ -47,5 +48,6 @@ public class gps extends FragmentActivity implements OnMapReadyCallback {
         mMap.addMarker(new MarkerOptions().position(prueba2).title("ùwú").snippet("Contamos con garantías virtuales").icon(BitmapDescriptorFactory.fromResource(R.drawable.icono1)));
 
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(prueba,12));
+
     }
 }
